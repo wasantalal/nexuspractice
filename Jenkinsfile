@@ -50,7 +50,7 @@ pipeline {
                 )]) {
 
                     bat """
-                    docker login %NEXUS_REGISTRY% -u %USER% -p %PASS%
+                    echo %PASS% | docker login %NEXUS_REGISTRY% -u %USER% --password-stdin
                     """
                 }
             }
